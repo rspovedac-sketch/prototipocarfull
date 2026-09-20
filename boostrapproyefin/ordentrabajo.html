@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orden de Trabajo</title>
+<link href="./css/ordentrabajo.css" rel="stylesheet" />
+<body>
+ 
+<div class="sheet">
+  <div class="stub">
+    <div>FOLIO INTERNO</div>
+    <div class="num">OT-<span id="folioNum">2026-0842</span></div>
+  </div>
+ 
+  <header class="head">
+    <div>
+      <h1>Orden de Trabajo</h1>
+      <div class="sub">Registro de servicio técnico y mantenimiento</div>
+    </div>
+    <div class="status-tag">Pendiente</div>
+  </header>
+ 
+  <form id="otForm">
+   
+    <div class="section-label">Datos del cliente</div>
+    <div class="grid">
+      <div>
+        <label for="cliente">Nombre o razón social</label>
+        <input type="text" id="cliente" placeholder="RAZON O ASEGURADORA." required>
+      </div>
+      <div>
+        <label for="contacto">Persona de contacto</label>
+        <input type="text" id="contacto" placeholder="Nombre de quien recibe">
+      </div>
+      <div>
+        <label for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" placeholder="300 000 0000">
+      </div>
+      <div>
+        <label for="direccion">Dirección / ubicación del servicio</label>
+        <input type="text" id="direccion" placeholder="Calle, ciudad">
+      </div>
+    </div>
+ 
+    <div class="section-label">Detalle del trabajo</div>
+    <div class="grid">
+      <div>
+        <label for="fecha">Fecha de solicitud</label>
+        <input type="date" id="fecha">
+      </div>
+      <div>
+        <label for="tecnico">Técnico asignado</label>
+        <input type="text" id="tecnico" placeholder="Nombre del técnico">
+      </div>
+      <div class="full">
+        <label for="equipo">Equipo / activo a intervenir</label>
+        <input type="text" id="equipo" placeholder="Marca, modelo, número de serie">
+      </div>
+      <div class="full">
+        <label>Prioridad</label>
+        <div class="radio-row">
+          <label class="opt"><input type="radio" name="prioridad" value="baja"><span>Baja</span></label>
+          <label class="opt"><input type="radio" name="prioridad" value="media" checked><span>Media</span></label>
+          <label class="opt"><input type="radio" name="prioridad" value="alta"><span>Alta</span></label>
+          <label class="opt"><input type="radio" name="prioridad" value="urgente"><span>Urgente</span></label>
+        </div>
+      </div>
+      <div class="full">
+        <label for="descripcion">Descripción del problema o trabajo solicitado</label>
+        <textarea id="descripcion" placeholder="Describa la falla reportada o el trabajo a realizar..."></textarea>
+      </div>
+      <div class="full">
+        <label for="diagnostico">Diagnóstico / trabajo realizado</label>
+        <textarea id="diagnostico" placeholder="Se completa al finalizar el servicio..."></textarea>
+      </div>
+    </div>
+ 
+    <div class="section-label">Materiales y repuestos utilizados</div>
+    <table id="matTable">
+      <thead>
+        <tr>
+          <th style="width:45%">Descripción</th>
+          <th style="width:15%">Cantidad</th>
+          <th style="width:20%">Unidad</th>
+          <th style="width:15%">Costo</th>
+          <th class="row-actions"></th>
+        </tr>
+      </thead>
+      <tbody id="matBody">
+        <tr>
+          <td><input type="text" placeholder="Ej. REPUESTO"></td>
+          <td class="qty"><input type="number" min="0" value="1"></td>
+          <td><input type="text" placeholder="Unidad / caja"></td>
+          <td><input type="text" placeholder="$0"></td>
+          <td class="row-actions"><button type="button" class="del-row" title="Eliminar fila">✕</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" class="add-row-btn" id="addRow">+ Agregar material</button>
+ 
+    <div class="section-label">Cierre y conformidad</div>
+    <div class="grid g3">
+      <div>
+        <label for="horaInicio">Hora de inicio</label>
+        <input type="time" id="horaInicio">
+      </div>
+      <div>
+        <label for="horaFin">Hora de finalización</label>
+        <input type="time" id="horaFin">
+      </div>
+      <div>
+        <label for="estado">Estado final</label>
+        <select id="estado">
+          <option value="pendiente">Pendiente</option>
+          <option value="proceso">En proceso</option>
+          <option value="completado">Completado</option>
+          <option value="requiere-seguimiento">Requiere seguimiento</option>
+        </select>
+      </div>
+    </div>
+ 
+    <div class="sign-block">
+      <div>
+        <div class="sign-line">Firma del técnico</div>
+      </div>
+      <div>
+        <div class="sign-line">Firma de conformidad del cliente</div>
+      </div>
+    </div>
+ 
+    <div class="footer-bar">
+      <div class="hint">Los campos se guardan solo en esta sesión.</div>
+      <div class="actions">
+        <button type="button" class="secondary" onclick="window.print()">Imprimir</button>
+        <button type="submit" class="primary">Guardar orden</button>
+      </div>
+    </div>
+  </form>
+</div>
+ 
+<div class="toast" id="toast">Orden de trabajo guardada correctamente.</div>
+<script src="./js/ord.js"></script>
+ 
+</body>
+</html>

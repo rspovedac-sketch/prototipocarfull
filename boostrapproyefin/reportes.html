@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generación de Reportes con Evidencia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&family=Inter:wght@400;500;600&family
+                         =Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link href="./css/reportes.css" rel="stylesheet" />
+</head>
+<body>
+
+<header class="masthead">
+    <div>
+    <h1>Generación de Reportes</h1>
+    <p>Reportes con evidencia fotográfica y en video</p>
+  </div>
+  <div class="fecha-hoy" id="fechaHoy"></div>
+</header>
+
+<main>
+  <div class="columna-form">
+
+    <section class="bloque">
+      <h2>1. Datos del reporte</h2>
+      <div class="fila-campos">
+        <div class="campo">
+          <label for="reporteId">N.º de reporte</label>
+          <input type="text" id="reporteId" placeholder="NR-0001">
+        </div>
+        <div class="campo">
+          <label for="fechaReporte">Fecha</label>
+          <input type="date" id="fechaReporte">
+        </div>
+      </div>
+      <div class="campo">
+        <label for="tituloReporte">Título del reporte</label>
+        <input type="text" id="tituloReporte" placeholder="Escriba el Servicio ">
+      </div>
+      <div class="fila-campos">
+        <div class="campo">
+          <label for="responsable">Responsable</label>
+          <input type="text" id="responsable" placeholder="Nombre del Tecnico">
+        </div>
+        <div class="campo">
+          <label for="ubicacion">Ubicación / cliente</label>
+          <input type="text" id="ubicacion" placeholder="Sitio o cliente">
+        </div>
+      </div>
+    </section>
+
+    <section class="bloque">
+      <h2>2. Observaciones</h2>
+      <div id="listaObservaciones"></div>
+      <button type="button" class="boton-agregar" id="btnAgregarObs">+ Agregar observación</button>
+    </section>
+
+    <section class="bloque">
+      <h2>3. Evidencia (fotos y videos)</h2>
+      <div class="zona-carga" id="zonaCarga">
+        <div><strong>Haz clic para subir</strong> o arrastra archivos aquí</div>
+        <div class="tipos">Formatos admitidos: imágenes (JPG, PNG) y videos (MP4, MOV, WEBM)</div>
+        <input type="file" id="inputArchivos" accept="image/*,video/*" multiple>
+      </div>
+      <div class="galeria" id="galeria"></div>
+    </section>
+
+    <button type="button" class="cta-generar" id="btnGenerar">Generar reporte</button>
+  </div>
+
+  <div class="columna-reporte">
+    <h2 style="font-family:'Zilla Slab',serif;font-size:1.15rem;color:var(--petrol);margin-top:0;">Vista previa del reporte</h2>
+    <div id="zonaDocumento">
+      <div class="placeholder-reporte">Completa los datos, agrega observaciones y evidencia, luego presiona «Generar reporte» para ver el documento aquí.</div>
+    </div>
+  </div>
+</main>
+<script src="./js/REPORTES.JS"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Libro de Órdenes — Facturación de Taller</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link href="./css/factu.css" rel="stylesheet" />
+</head>
+<body>
+
+<header class="masthead">
+    <div>
+    <h1>Libro de Órdenes</h1>
+    <p>Facturación de servicios y mano de obra</p>
+    </div>
+    <div class="fecha-hoy" id="fechaHoy"></div>
+</header>
+
+<main>
+    <div class="columna-orden">
+    <section class="bloque">
+        <h2>1. Datos de la Orden</h2>
+        <div class="fila-campos">
+        <div class="campo">
+            <label for="ordenId">N.º de Orden</label>
+            <input type="text" id="ordenId" placeholder="OS-0001">
+        </div>
+        <div class="campo">
+            <label for="fechaOrden">Fecha</label>
+            <input type="date" id="fechaOrden">
+        </div>
+        </div>
+        <div class="campo">
+        <label for="clienteNombre">Cliente</label>
+        <input type="text" id="clienteNombre" placeholder="Nombre del cliente">
+        </div>
+        <div class="fila-campos">
+        <div class="campo">
+            <label for="clienteDoc">Identificación</label>
+            <input type="text" id="clienteDoc" placeholder="C.C. / NIT">
+        </div>
+        <div class="campo">
+            <label for="equipoDetalle">Equipo / vehículo</label>
+            <input type="text" id="equipoDetalle" placeholder=" Renault Logan 2018">
+        </div>
+        </div>
+    </section>
+
+    <section class="bloque">
+        <h2>2. Repuestos y servicios</h2>
+        <div id="listaItems"></div>
+        <button type="button" class="boton-agregar" id="btnAgregarItem">+ Agregar línea</button>
+    </section>
+
+    <section class="bloque">
+        <h2>3. Mano de obra</h2>
+        <div class="tarifa-mo">
+        <div class="campo">
+            <label for="horasMO">Horas Trabajadas</label>
+            <input type="number" id="horasMO" min="0" step="0.5" value="0">
+        </div>
+        <div class="campo">
+            <label for="tarifaMO">Tarifa por Hora ($)</label>
+            <input type="number" id="tarifaMO" min="0" step="1000" value="0">
+        </div>
+        </div>
+        <div id="listaManoObra"></div>
+        <button type="button" class="boton-agregar" id="btnAgregarMO">+ Agregar concepto de mano de obra</button>
+    </section>
+
+    <section class="bloque">
+        <h2>4. Impuestos</h2>
+        <div class="campo-impuesto">
+        <label for="tasaImpuesto">IVA aplicado sobre el subtotal (%)</label>
+        <input type="number" id="tasaImpuesto" min="0" max="100" step="0.5" value="19">
+        </div>
+    </section>
+
+    <section class="bloque">
+        <h2>5. Registrar pagos</h2>
+        <div id="listaPagos"></div>
+        <button type="button" class="boton-agregar" id="btnAgregarPago">+ Registrar pago</button>
+        <div class="resumen-pagos">
+        <span>Total pagado</span>
+        <strong id="totalPagadoResumen">$ 0</strong>
+        </div>
+        <div class="campo-impuesto" style="margin-top:14px;">
+        <label for="efectivorecibido">Efectivo recibido del cliente ($)</label>
+        <input type="number" id="efectivoRecibido" min="0" step="1000" value="0">
+        </div>
+    </section>
+
+    <button type="button" class="cta-generar" id="btnGenerar">Generar factura y comprobante</button>
+    </div>
+
+    <div class="columna-comprobante">
+    <h2 style="font-family:'Zilla Slab',serif;font-size:1.15rem;color:var(--petrol);margin-top:0;">Comprobante</h2>
+    <div id="zonaRecibo">
+        <div class="placeholder-recibo">Completa la orden y presiona «Generar factura y comprobante» para ver el documento aquí.</div>
+    </div>
+    </div>
+</main>
+<script src="./js/factu.js"></script>
+</body>
+</html>
