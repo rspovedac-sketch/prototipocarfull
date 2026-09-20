@@ -23,13 +23,13 @@
             <form action="" method="">
                 <h2>Crear una cuenta</h2>
                 <!-- ***************** -->
-                <span style="font-size: 20px;font-weight:bold">Ingresa tus datos para registrarse</span>
+                <span style="font-size: 20px;font-weight:bold">Ingrese los datos para registrarse</span>
                 <input type="text" placeholder="Usuario" name="usuario" required >
                 <input type="text" placeholder="Nombre" name="realname" required>
                 <input type="text" placeholder="Apellido" name="realapell" required>
                 <select name="tipo_doc">
-                    <option value="Tarjeta identidad">Tarjeta identidad</option>
-                    <option value="Cedula ciudadania">Cedula ciudadania</option>
+                    <option value="Tarjeta identidad">Tarjeta de identidad</option>
+                    <option value="Cedula ciudadania">Cedula de ciudadania</option>
                 </select>
                 <input type="text" placeholder="documento" name="no_documento" required>
                 <input type="password" placeholder="Password" name="pass" required>
@@ -40,7 +40,7 @@
         <!-- Iniciar sesión -->
                 <div class="form-container sign-in-container">
                     <form action="" method="">
-                        <h2>Iniciar Sesión</h2>
+                        <h2>Iniciar sesión</h2>
                         <div class="social-container">
                             <a href="https://www.facebook.com"><i class="fab fa-facebook-square"></i></a>
                             <a href="https://www.youtube.com"><i class="fab fa-youtube-square"></i></a>
@@ -50,11 +50,11 @@
                         </div>
                         <!-- ***************** -->
                         <br>
-                        <span>Ingresa tu cuenta</span>
+                        <span>iniciar sesión</span>
                         <input type="text" placeholder="Usuario" name="usuario" required>
                         <input type="password" placeholder="Password" name="pass" id="seña" required>
-                        <input type="checkbox" id="verpass" onchange="mostrarSeña()">Mostrar contraseña
-                        <a href="#">Olvidaste tu contraseña?</a>
+                        <input type="checkbox" id="verpass" onchange="mostrarcontraseña()">Mostrar contraseña
+                        <a href="#">¿Has olvidado la contraseña?</a>
                         <input type="submit" class="boost" name="submit" id="boost" value="Aceptar">
                     </form>
                 </div> 
@@ -64,7 +64,7 @@
             <div class="overlay">
                 <div class="overlay-panel overlay-left">
                     <h1>BIENVENIDO DE NUEVO!</h1>
-                    <p>Inicie sesión con sus datos claves</p>
+                    <p>Inicie sesión con sus datos</p>
                     <button class="ghost" id="signIn">Inicio Sesión</button>
                 </div>
                 <div class="overlay-panel overlay-right">
