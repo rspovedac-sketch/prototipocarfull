@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo de Repuestos</title>
+<link href="./css/repusto.css" rel="stylesheet" />
+</head>
+<body>
+ 
+<div class="topbar">
+  <div class="brand"><span class="dot"></span> Catálogo de Repuestos</div>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Buscar por nombre, referencia o modelo...">
+  </div>
+  <button class="cart-pill" id="cartPill">PEDIDO (0)</button>
+</div>
+ 
+<div class="layout">
+  <aside class="sidebar">
+    <div class="heading">Categorías</div>
+    <div id="menuList"></div>
+  </aside>
+ 
+  <main>
+    <div class="main-head">
+      <div>
+        <h2 id="catTitle">Todos los repuestos</h2>
+        <div class="sub" id="catCount">0 productos encontrados</div>
+      </div>
+      <select class="sort-select" id="sortSelect">
+        <option value="default">Ordenar por: relevancia</option>
+        <option value="price-asc">Precio: menor a mayor</option>
+        <option value="price-desc">Precio: mayor a menor</option>
+        <option value="name-asc">Nombre: A-Z</option>
+      </select>
+    </div>
+ 
+    <div class="grid" id="grid"></div>
+    <div class="empty-state" id="emptyState">No se encontraron repuestos con ese criterio de búsqueda.</div>
+  </main>
+</div>
+  <script src="./js/repuest.js"></script>
+</body>
+</html>
